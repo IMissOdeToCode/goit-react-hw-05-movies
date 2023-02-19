@@ -1,0 +1,22 @@
+.menu {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+}
+
+.link {
+  text-decoration: none;
+  color: red;
+  display: inline-block;
+  padding: 10px 15px;
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 28px;
+  font-weight: 400;
+  letter-spacing: normal;
+}
+
+.link:global(.active) {
+  color: rgb(13, 231, 180);
+  font-weight: 600;
+  scale: 1.1;
+}
