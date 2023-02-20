@@ -4,10 +4,9 @@ import { Link, useLocation } from 'react-router-dom';
 const MovieItem = ({ movie }) => {
   const { title, id } = movie;
   const location = useLocation();
-  console.log(location);
 
   return (
-    <Link to={`/movies/${id}`} state={{}}>
+    <Link to={`/movies/${id}`} state={{ from: location }}>
       <li>{title}</li>
     </Link>
   );

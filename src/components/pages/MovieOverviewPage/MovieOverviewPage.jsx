@@ -4,7 +4,7 @@ import {
   useNavigate,
   Link,
   Outlet,
-  // useLocation,
+  useLocation,
 } from 'react-router-dom';
 
 import GeneralMovieInfo from 'components/GeneralMovieInfo/GeneralMovieInfo';
@@ -20,21 +20,9 @@ const MovieOverviewPage = () => {
   const { id } = useParams();
 
   const navigate = useNavigate();
-  // const location = useLocation();
-
-  // navigate({ state: 'home' });
-
-  // console.log('location', location);
-
-  // const initPath = useRef(location?.state?.state?.from?.pathname || null);
-  // console.log('initPath', initPath);
-
-  // console.log('window', window.location);
-  // console.log('origin', window.origin);
-  // console.log('initPath', initPath);
-
-  // window.location
-  // // window.origin
+  const location = useLocation();
+  // console.log(location);
+  const from = location?.state?.from || '/';
 
   useEffect(() => {
     const fetchMovie = async () => {
@@ -49,8 +37,8 @@ const MovieOverviewPage = () => {
     fetchMovie();
   }, [id]);
 
-  const goBack = useCallback(() => navigate(-1), [navigate]);
-  // const goBack = useCallback(() => navigate('/'), [navigate]);
+  const goBack = useCallback(() => navigate(from), [navigate, from]);
+  // const goBack = () => navigate(from);
 
   if (error) {
     console.log(error.data.status_message);
@@ -60,10 +48,14 @@ const MovieOverviewPage = () => {
     <>
       <button onClick={goBack}>Go back</button>
       <p>
-        <Link to={`cast`}>Cast</Link>
+        <Link to={`cast`} state={{ from: from }}>
+          Cast
+        </Link>
       </p>
       <p>
-        <Link to={`reviews`}>Reviews</Link>
+        <Link to={`reviews`} state={{ from: from }}>
+          Reviews
+        </Link>
       </p>
 
       <GeneralMovieInfo movie={movie} />
