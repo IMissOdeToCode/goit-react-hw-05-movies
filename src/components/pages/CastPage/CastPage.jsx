@@ -5,8 +5,6 @@ import CastList from 'components/CastList/CastList';
 
 import { getCreditsById } from 'components/shared/services/themoviedb-api';
 
-// import PropTypes from 'prop-types';
-
 const CastPage = () => {
   const [cast, setCast] = useState([]);
   const [error, setError] = useState(null);
@@ -39,4 +37,3 @@ const CastPage = () => {
 };
 
 export default CastPage;
-// CastPage.propTypes = {};

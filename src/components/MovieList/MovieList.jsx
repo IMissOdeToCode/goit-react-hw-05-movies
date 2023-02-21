@@ -1,4 +1,4 @@
-// import PropTypes from 'prop-types';
+import PropTypes from 'prop-types';
 
 import MovieItem from '../MovieItem/MovieItem';
 
@@ -12,4 +12,11 @@ const MovieList = ({ movies }) => {
 
 export default MovieList;
 
-// MovieList.propTypes = {};
+MovieList.propTypes = {
+  movies: PropTypes.arrayOf(
+    PropTypes.shape({
+      title: PropTypes.string,
+      id: PropTypes.number,
+    })
+  ),
+};

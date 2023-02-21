@@ -51,22 +51,3 @@ const MoviesPage = () => {
 };
 
 export default MoviesPage;
-
-// useEffect(() => {
-//   if (!query) {
-//     return;
-//   }
-
-//   getMovieByName(query, page)
-//     .then(response => {
-//       if (response.status !== 200) {
-//         console.log('STATUS NOT 200');
-//         return setError(new Error(`some err message`));
-//       }
-//       setMovies(response.data.results);
-//     })
-//     .catch(err => {
-//       setError(err);
-//     })
-//     .finally();
-// }, [query, page]);

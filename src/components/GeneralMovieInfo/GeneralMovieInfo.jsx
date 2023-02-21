@@ -1,7 +1,7 @@
 import { IMAGE_w500 as image } from 'components/shared/utils/constants';
 import defaultImgage from '../../default.jpg';
 
-// import PropTypes from 'prop-types';
+import PropTypes from 'prop-types';
 
 const GeneralMovieInfo = ({ movie }) => {
   const isObjectEmpty = Boolean(Object.keys(movie).length);
@@ -46,3 +46,20 @@ const GeneralMovieInfo = ({ movie }) => {
 };
 
 export default GeneralMovieInfo;
+
+GeneralMovieInfo.propTypes = {
+  movie: PropTypes.shape({
+    title: PropTypes.string,
+    poster_path: PropTypes.string,
+    vote_average: PropTypes.number,
+    // runtime,
+    // release_date,
+    overview: PropTypes.string,
+    genres: PropTypes.arrayOf(
+      PropTypes.shape({
+        id: PropTypes.number,
+        name: PropTypes.string,
+      })
+    ),
+  }),
+};

@@ -3,8 +3,6 @@ import { useParams } from 'react-router-dom';
 
 import { getReviewsById } from 'components/shared/services/themoviedb-api';
 
-// import PropTypes from 'prop-types';
-
 const ReviewsPage = () => {
   const [reviews, setReviews] = useState([]);
   const [error, setError] = useState(null);
@@ -48,4 +46,3 @@ const ReviewsPage = () => {
 };
 
 export default ReviewsPage;
-// ReviewsPage.propTypes = {};

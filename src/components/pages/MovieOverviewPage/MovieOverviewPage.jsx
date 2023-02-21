@@ -11,8 +11,6 @@ import GeneralMovieInfo from 'components/GeneralMovieInfo/GeneralMovieInfo';
 
 import { getMovieById } from 'components/shared/services/themoviedb-api';
 
-// import PropTypes from 'prop-types';
-
 const MovieOverviewPage = () => {
   const [movie, setMovie] = useState({});
   const [error, setError] = useState(null);
@@ -21,7 +19,7 @@ const MovieOverviewPage = () => {
 
   const navigate = useNavigate();
   const location = useLocation();
-  // console.log(location);
+
   const from = location?.state?.from || '/';
 
   useEffect(() => {
@@ -38,7 +36,6 @@ const MovieOverviewPage = () => {
   }, [id]);
 
   const goBack = useCallback(() => navigate(from), [navigate, from]);
-  // const goBack = () => navigate(from);
 
   if (error) {
     console.log(error.data.status_message);
@@ -65,5 +62,3 @@ const MovieOverviewPage = () => {
 };
 
 export default MovieOverviewPage;
-
-// MovieOverview.propTypes = {};

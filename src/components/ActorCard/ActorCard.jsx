@@ -1,7 +1,7 @@
 import { IMAGE_w200 as image } from 'components/shared/utils/constants';
 import defaultImgage from '../../default-avatar.jpeg';
 
-// import PropTypes from 'prop-types';
+import PropTypes from 'prop-types';
 
 const ActorCard = ({ actor }) => {
   const { profile_path, name, character } = actor;
@@ -17,3 +17,11 @@ const ActorCard = ({ actor }) => {
 };
 
 export default ActorCard;
+
+ActorCard.propTypes = {
+  actor: PropTypes.shape({
+    profile_path: PropTypes.string,
+    name: PropTypes.string,
+    character: PropTypes.string,
+  }),
+};
