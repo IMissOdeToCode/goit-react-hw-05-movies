@@ -6,13 +6,21 @@
 
 .link {
   text-decoration: none;
-  color: red;
+  color: black;
   display: inline-block;
   padding: 10px 15px;
-  font-family: 'Courier New', Courier, monospace;
+  /* font-family: 'Courier New', Courier, monospace; */
   font-size: 28px;
   font-weight: 400;
   letter-spacing: normal;
+
+  transition-duration: 0.1s;
+  transition-timing-function: linear;
+  transition-property: scale;
+}
+
+.link:hover {
+  scale: 1.1;
 }
 
 .link:global(.active) {

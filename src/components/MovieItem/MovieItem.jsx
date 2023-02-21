@@ -1,5 +1,7 @@
 import { Link, useLocation } from 'react-router-dom';
 
+import css from './MovieItem.module.css';
+
 import PropTypes from 'prop-types';
 
 const MovieItem = ({ movie }) => {
@@ -8,7 +10,7 @@ const MovieItem = ({ movie }) => {
 
   return (
     <Link to={`/movies/${id}`} state={{ from: location }}>
-      <li>{title}</li>
+      <li className={css.movieItem}>{title}</li>
     </Link>
   );
 };

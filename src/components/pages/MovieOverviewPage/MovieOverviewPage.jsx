@@ -2,14 +2,16 @@ import { useState, useEffect, useCallback } from 'react';
 import {
   useParams,
   useNavigate,
-  Link,
   Outlet,
   useLocation,
+  NavLink,
 } from 'react-router-dom';
 
 import GeneralMovieInfo from 'components/GeneralMovieInfo/GeneralMovieInfo';
 
 import { getMovieById } from 'components/shared/services/themoviedb-api';
+
+import css from './MovieOverviewPage.module.css';
 
 const MovieOverviewPage = () => {
   const [movie, setMovie] = useState({});
@@ -43,16 +45,19 @@ const MovieOverviewPage = () => {
 
   return (
     <>
-      <button onClick={goBack}>Go back</button>
+      <button onClick={goBack} className={css.btn}>
+        Go back
+      </button>
+
       <p>
-        <Link to={`cast`} state={{ from: from }}>
+        <NavLink to={`cast`} state={{ from: from }} className={css.linkText}>
           Cast
-        </Link>
+        </NavLink>
       </p>
       <p>
-        <Link to={`reviews`} state={{ from: from }}>
+        <NavLink to={`reviews`} state={{ from: from }} className={css.linkText}>
           Reviews
-        </Link>
+        </NavLink>
       </p>
 
       <GeneralMovieInfo movie={movie} />

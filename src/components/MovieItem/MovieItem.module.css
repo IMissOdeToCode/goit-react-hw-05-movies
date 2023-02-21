@@ -1,0 +1,17 @@
+.movieItem {
+  color: black;
+  text-transform: uppercase;
+
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 20px;
+  font-weight: 400;
+  transition-duration: 0.15s;
+  transition-timing-function: linear;
+  transition-property: scale;
+}
+
+.movieItem:hover {
+  color: rgb(236, 82, 82);
+  font-weight: 600;
+  scale: 1.1;
+}

@@ -6,6 +6,8 @@ import MovieList from 'components/MovieList/MovieList';
 
 import { getMovieByName } from 'components/shared/services/themoviedb-api';
 
+import css from './MoviePage.module.css';
+
 const MoviesPage = () => {
   const [searchParams, setSearchParams] = useSearchParams();
   const query = searchParams.get('query');
@@ -45,7 +47,11 @@ const MoviesPage = () => {
       <Searchbar onSubmit={handleFormSubmit} />
       <MovieList movies={movies} />
 
-      {movies.length > 0 && <button onClick={handleNextPage}>LOAD MORE</button>}
+      {movies.length > 0 && (
+        <button onClick={handleNextPage} className={css.btn}>
+          LOAD MORE
+        </button>
+      )}
     </>
   );
 };

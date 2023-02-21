@@ -3,6 +3,8 @@ import defaultImgage from '../../default.jpg';
 
 import PropTypes from 'prop-types';
 
+import css from './GeneralMovieInfo.module.css';
+
 const GeneralMovieInfo = ({ movie }) => {
   const isObjectEmpty = Boolean(Object.keys(movie).length);
 
@@ -33,14 +35,15 @@ const GeneralMovieInfo = ({ movie }) => {
 
   return (
     <>
-      <h2>general movie info</h2>
-      <img src={imageSrc} alt={`${title} poster`} className="" width="300" />
-      <p>{title}</p>
-      <p>User Score: {vote_average}</p>
+      <p className={css.text}>{title}</p>
+      <img src={imageSrc} alt={`${title} poster`} width="300" />
+
+      <p className={css.userScore}>User Score: {vote_average}</p>
       <h2>overview</h2>
       <p>{overview}</p>
-      <p>Genres</p>
-      <p>{getGenresString()}</p>
+      <p>
+        Genres <b>{getGenresString()}</b>
+      </p>
     </>
   );
 };

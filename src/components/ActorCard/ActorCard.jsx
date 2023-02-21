@@ -11,7 +11,9 @@ const ActorCard = ({ actor }) => {
     <li>
       <img src={imageSrc} alt={`${name} poster`} width="200" />
       <p>{name}</p>
-      <p>Character: {character}</p>
+      <p>
+        <b>Character:</b> {character}
+      </p>
     </li>
   );
 };

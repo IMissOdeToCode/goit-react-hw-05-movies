@@ -1,0 +1,21 @@
+.btn {
+  background-color: rgb(13, 231, 180);
+  border-radius: 5px;
+  border: 2px solid transparent;
+  display: inline-block;
+  cursor: pointer;
+  color: #ffffff;
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 18px;
+  font-weight: bold;
+  padding: 8px 18px;
+  text-decoration: none;
+
+  transition-duration: 0.1s;
+  transition-timing-function: linear;
+  transition-property: scale;
+}
+
+.btn:hover {
+  scale: 1.1;
+}
